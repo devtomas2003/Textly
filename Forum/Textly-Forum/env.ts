@@ -1,0 +1,1 @@
+export const API_POST_SERVER = "http://192.168.1.10:8080";
