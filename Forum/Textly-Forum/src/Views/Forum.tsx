@@ -22,7 +22,7 @@ export default function Forum(){
                 if("response" in err){
                     alert(err.response.data.message);
                 }else{
-                    alert("Ocorreu um erro no envio! Por favor, tente novamente!");
+                    alert("Ocorreu um erro na visualização! Por favor, tente novamente!");
                 }
             });
         }
@@ -40,9 +40,9 @@ export default function Forum(){
                 <div className="flex flex-col mt-4 space-y-4">
                     { messages.map((message) => {
                         return(
-                            <div className="font-roboto bg-zinc-200 p-4 rounded-lg flex flex-col space-y-2">
-                                <p className="text-zinc-800 font-light text-justify">Data/Hora: {processDate(message.date)}</p>
-                                <h1 className="font-medium text-xl text-zinc-800">{message.titulo} ⸱ {message.autor}</h1>
+                            <div className="font-roboto bg-zinc-100 border border-zinc-200 p-4 rounded-lg flex flex-col space-y-2" key={message.id}>
+                                <p className="text-zinc-800 font-light text-justify">{message.autor} - {processDate(message.date)}</p>
+                                <h1 className="font-medium text-xl text-zinc-800">{message.titulo}</h1>
                                 <p className="text-zinc-800 font-light text-justify">{message.message}</p>
                             </div>
                         );
